@@ -63,7 +63,7 @@ VALIDATE $? "Installing Dependencies"
 mv target/shipping-1.0.jar shipping.jar &>> $LOG
 VALIDATE $? "renaming Shipping-1.0"
 
-cp /home/centos/roboshop-shell /etc/systemd/system/shipping.service &>> $LOG
+cp /home/centos/roboshop-shell/shipping.service /etc/systemd/system/shipping.service &>> $LOG
 VALIDATE $? "Copying shipping.service"
 
 systemctl daemon-reload &>> $LOG
