@@ -39,19 +39,24 @@ VALIDATE $? "Enabling NodeJS"
 dnf install nodejs -y &>> $LOG
 VALIDATE $? "Installing NodeJS 18"
 
-useradd roboshop &>> $LOG
-VALIDATE $? "Creating Roboshop User"
+id roboshop
+if [ $? != 0 ]
+then 
+    useradd roboshop &>> $LOG
+    VALIDATE $? "Creating Roboshop User"
+else
+    echo -e "User is already exist...$Y SKIPPING $N"       
 
-mkdir /app &>> $LOG
+mkdir -o /app &>> $LOG
 VALIDATE $? "Creating App Directory"
 
-curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>> $LOG
+curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>> $LOG # -o is used for overwrite
 VALIDATE $? "Downloading Catalogue Application"
 
 cd /app &>> $LOG
 VALIDATE $? "Goto App Directory"
 
-unzip /tmp/catalogue.zip &>> $LOG
+unzip -0 /tmp/catalogue.zip &>> $LOG
 VALIDATE $? "Unzipping Catalogue.zip"
 
 cd /app &>> $LOG
