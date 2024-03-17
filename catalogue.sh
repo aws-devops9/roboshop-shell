@@ -39,7 +39,7 @@ VALIDATE $? "Enabling NodeJS"
 dnf install nodejs -y &>> $LOG
 VALIDATE $? "Installing NodeJS 18"
 
-id roboshop
+id roboshop &>> $LOG
 if [ $? != 0 ]
 then 
     useradd roboshop &>> $LOG
