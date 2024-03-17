@@ -36,8 +36,14 @@ VALIDATE $? "Disabling Nodejs"
 dnf module enable nodejs:18 -y &>> $LOG
 VALIDATE $? "Enabling NodeJS"
 
-dnf install nodejs -y &>> $LOG
+dnf list installed nodejs &>> $LOG
+if [ $? != 0 ]
+then 
+    dnf install nodejs -y &>> $LOG
 VALIDATE $? "Installing NodeJS 18"
+else
+   echo -e "NodeJS is already Installed...$Y SKIPPING $N" 
+fi      
 
 id roboshop &>> $LOG
 if [ $? != 0 ]
