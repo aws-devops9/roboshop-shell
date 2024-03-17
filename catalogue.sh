@@ -48,7 +48,7 @@ else
     echo -e "User is already exist...$Y SKIPPING $N" 
 fi      
 
-mkdir -o /app &>> $LOG
+mkdir -p /app &>> $LOG # -p will create directory if it is not exist or it will skip If it's already exist
 VALIDATE $? "Creating App Directory"
 
 curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>> $LOG # -o is used for overwrite
