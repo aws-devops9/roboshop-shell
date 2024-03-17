@@ -51,7 +51,7 @@ VALIDATE $? "Downloading Shipping Application"
 cd /app &>> $LOG
 VALIDATE $? "Go to App Directory"
 
-unzip -o /tmp/shipping.zip  # -o is used for overwrite
+unzip -o /tmp/shipping.zip  &>> $LOG # -o is used for overwrite
 VALIDATE $? "Unzipping shipping.zip" 
 
 cd /app &>> $LOG
