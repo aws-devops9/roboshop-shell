@@ -57,7 +57,7 @@ VALIDATE $? "Downloading Catalogue Application"
 cd /app &>> $LOG
 VALIDATE $? "Goto App Directory"
 
-unzip -0 /tmp/catalogue.zip &>> $LOG
+unzip -o /tmp/catalogue.zip &>> $LOG # -o is used for overwrite
 VALIDATE $? "Unzipping Catalogue.zip"
 
 cd /app &>> $LOG
