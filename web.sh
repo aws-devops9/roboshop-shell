@@ -51,7 +51,7 @@ VALIDATE $? "Go to html location"
 unzip -o /tmp/web.zip &>> $LOG
 VALIDATE $? "Unzipping web.zip"
  
-cp /home/centos/roboshop.conf /etc/nginx/default.d/roboshop.conf &>> $LOG
+cp /home/centos/roboshop-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf &>> $LOG
 VALIDATE $? "Copying roboshop configuration file"
 
 systemctl restart nginx &>> $LOG
