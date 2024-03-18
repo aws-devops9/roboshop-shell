@@ -16,7 +16,6 @@ SG_ID=sg-04d3cc3675c0c646f
 INSTANCES=("mongodb" "redis" "mysql" "catalogue" "user" "cart" "shipping" "payment" "rabbitmq" "dispatch" "web")
 DOMAIN_NAME=learndevops.space
 ZONE_ID=Z02357183AC34D1F7B6MH
-
 for i in "${INSTANCES[@]}"
 do
     if [ $i == "mongodb" ] || [ $i == "mysql" ] || [ $i == "shipping" ]
