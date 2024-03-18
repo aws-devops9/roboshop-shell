@@ -17,6 +17,7 @@ INSTANCES=("mongodb" "redis" "mysql" "catalogue" "user" "cart" "shipping" "payme
 
 for i in "${$INSTANCES[@]}"
 do
+    echo "Instance is $i"
     if [ $i == "mongodb" ] || [ $i == "mysql" ] || [ $i == "shipping" ]
     then
         INSTANCE_TYPE="t2.small"
