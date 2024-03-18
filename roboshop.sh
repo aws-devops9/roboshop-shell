@@ -15,7 +15,7 @@ AMI=ami-0f3c7d07486cad139
 SG_ID=sg-04d3cc3675c0c646f
 INSTANCES=("mongodb" "redis" "mysql" "catalogue" "user" "cart" "shipping" "payment" "rabbitmq" "dispatch" "web")
 
-for i in "${$INSTANCES[@]}"
+for i in "${INSTANCES[@]}"
 do
     echo "Instance is $i"
     if [ $i == "mongodb" ] || [ $i == "mysql" ] || [ $i == "shipping" ]
